@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+<ul class="entries list-unstyled">
+{% for entry in entries %}
+  <li class="row">
+
+    <div class="col-xs-4 col-sm-4">
+      <a>{{ entry.title }}</a><br /><br />
+    </div>
+    <div class="col-xs-3 col-sm-2">
+      <span class="hidden-sm hidden-xs">价格：{{ entry.price }}</span>
+
+    </div>
+    <div class="col-xs-3 col-sm-2">
+      销量：{{ entry.deal }}<br/>
+      <span class="hidden-sm hidden-xs">评论数：{{ entry.deal }}</span><br/>
+    </div>
+{% else %}
+  <li><em>Unbelievable. No entries here so far.</em>
+{% endfor %}
+</ul>
+
+<ul class="pager">
+  <li class="previous"><a id="prev" href="#">Previous</a></li>
+  <li class="next"><a id="next" href="#">Next</a></li>
+</ul>
+{% endblock %}
